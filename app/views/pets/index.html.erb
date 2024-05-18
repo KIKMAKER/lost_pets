@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>These are all the Found Pets</h1>
+
+  <ul>
+  <% @pets.each do |pet| %>
+    <p>
+    <%= link_to pet.name, pet_path(pet) %> the <%= pet.species.capitalize %>. Found on: <%= pet.found_on.strftime(' %A %e %B %l %p') %> <%= link_to pet_path(pet),
+    data: { turbo_method: :delete, turbo_confirm: "You are about to delete #{pet.name}"} do %>
+      <i class="fa-solid fa-trash"></i>
+    <% end %>
+    </p>
+  <% end %>
+  </ul>
+
+
+  <p>Would you like to <%= link_to "add a pet", new_pet_path %>?</p>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+  <h1><%= @pet.name %> the <%= @pet.species.capitalize %></h1>
+
+  <p><%= @pet.name %> the <%= @pet.species.capitalize %> was found on <%= @pet.found_on.strftime(' %A %e %B %l %p') %> </p>
+  <p>They were found at <%= @pet.address %></p>
+
+  <p>Please get in touch if this is your pet</p>
+
+  <%= link_to "View all pets", pets_path, class: 'btn btn-primary' %>
+</div>
